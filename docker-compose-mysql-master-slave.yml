@@ -1,0 +1,31 @@
+version: '3'
+services:
+  mysql-master:
+    image: mysql:8.0.29
+    container_name: mysql-master
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-time-zone=+8:00
+    #restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root #设置root帐号密码
+    ports:
+      - 3307:3306
+    volumes:
+      - /root/mydata/mysql-master/log:/var/log/mysql
+      - /root/mydata/mysql-master/data:/var/lib/mysql
+      - /root/mydata/mysql-master/conf:/etc/conf
+      - /root/mydata/mysql-master/mysql-files:/var/lib/mysql-files
+
+  mysql-slave:
+    image: mysql:8.0.29
+    container_name: mysql-slave
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-time-zone=+8:00
+    #restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root #设置root帐号密码
+    ports:
+      - 3308:3306
+    volumes:
+      - /root/mydata/mysql-slave/log:/var/log/mysql
+      - /root/mydata/mysql-slave/data:/var/lib/mysql
+      - /root/mydata/mysql-slave/conf:/etc/conf
+      - /root/mydata/mysql-slave/mysql-files:/var/lib/mysql-files
