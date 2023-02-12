@@ -85,7 +85,7 @@ def convert_tag_name(old_name):
 '''
 if __name__ == '__main__':
     select_tag_from_msql()
-    pool = redis.ConnectionPool(host=server_ip, port=30919, db=0)
+    pool = redis.ConnectionPool(host=server_ip, port=30919, db=0, password='root')
 
     date_str = time.strftime("%Y-%m-%d", time.localtime())
 
