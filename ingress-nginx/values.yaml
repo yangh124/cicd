@@ -18,14 +18,14 @@ controller:
   image:
     ## Keep false as default for now!
     chroot: false
-    registry: registry.k8s.io
-    image: ingress-nginx/controller
+    registry: anjia0532
+    image: google-containers.ingress-nginx.controller
     ## for backwards compatibility consider setting the full image url via the repository value below
     ## use *either* current default registry/image or repository format or installing chart by providing the values.yaml will fail
     ## repository:
     tag: "v1.5.1"
-    digest: sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
-    digestChroot: sha256:c1c091b88a6c936a83bd7b098662760a87868d12452529bad0d178fb36147345
+    # digest: sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
+    # digestChroot: sha256:c1c091b88a6c936a83bd7b098662760a87868d12452529bad0d178fb36147345
     pullPolicy: IfNotPresent
     # www-data -> uid 101
     runAsUser: 101
@@ -656,13 +656,13 @@ controller:
     patch:
       enabled: true
       image:
-        registry: registry.k8s.io
-        image: ingress-nginx/kube-webhook-certgen
+        registry: anjia0532
+        image: google-containers.ingress-nginx.kube-webhook-certgen
         ## for backwards compatibility consider setting the full image url via the repository value below
         ## use *either* current default registry/image or repository format or installing chart by providing the values.yaml will fail
         ## repository:
         tag: v20220916-gd32f8c343
-        digest: sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
+        # digest: sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
         pullPolicy: IfNotPresent
       # -- Provide a priority class name to the webhook patching job
       ##
