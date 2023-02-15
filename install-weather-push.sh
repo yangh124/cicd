@@ -15,4 +15,4 @@ if [ -z "$4" ];then
     echo "请输入service.port！"
     exit 0
 fi
-helm upgrade --install weather-push /root/mydata/cicd/weather-push --set image.repository！="$1" --set image.tag！="$2" --set service.type="$3" --set service.port！="$4"
+helm upgrade --install weather-push /root/mydata/cicd/weather-push --set image.repository="$1" --set image.tag="$2" --set service.type="$3" --set service.port="$4"
