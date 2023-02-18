@@ -72,7 +72,7 @@ controller:
   # -- Process Ingress objects without ingressClass annotation/ingressClassName field
   # Overrides value for --watch-ingress-without-class flag of the controller binary
   # Defaults to false
-  watchIngressWithoutClass: false
+  watchIngressWithoutClass: true
 
   # -- Process IngressClass per name (additionally as per spec.controller).
   ingressClassByName: false
@@ -506,19 +506,19 @@ controller:
       http: http
       https: https
 
-    type: LoadBalancer
+    ## type: LoadBalancer
 
-    ## type: NodePort
-    ## nodePorts:
-    ##   http: 32080
-    ##   https: 32443
-    ##   tcp:
-    ##     8080: 32808
+    type: NodePort
     nodePorts:
-      http: ""
-      https: ""
-      tcp: {}
-      udp: {}
+       http: 32080
+       https: 32443
+       tcp:
+         8080: 32808
+     ## nodePorts:
+     ## http: ""
+     ## https: ""
+     ## tcp: {}
+     ## udp: {}
 
     external:
       enabled: true

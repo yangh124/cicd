@@ -5,7 +5,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx-example
   rules:
   - http:
       paths:
@@ -16,3 +15,10 @@ spec:
             name: weather-push-admin
             port:
               number: 80
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: weather-push
+            port: 
+              number: 8080
