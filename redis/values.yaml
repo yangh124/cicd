@@ -18,7 +18,7 @@ global:
   imagePullSecrets: []
   storageClass: ""
   redis:
-    password: ""
+    password: "root"
 
 ## @section Common parameters
 ##
@@ -107,7 +107,7 @@ image:
 
 ## @param architecture Redis&reg; architecture. Allowed values: `standalone` or `replication`
 ##
-architecture: replication
+architecture: standalone
 ## Redis&reg; Authentication parameters
 ## ref: https://github.com/bitnami/containers/tree/main/bitnami/redis#setting-the-server-password-on-first-run
 ##
@@ -463,7 +463,7 @@ master:
   service:
     ## @param master.service.type Redis&reg; master service type
     ##
-    type: ClusterIP
+    type: NodePort
     ## @param master.service.ports.redis Redis&reg; master service port
     ##
     ports:
@@ -473,7 +473,7 @@ master:
     ## NOTE: choose port between <30000-32767>
     ##
     nodePorts:
-      redis: ""
+      redis: "30919"
     ## @param master.service.externalTrafficPolicy Redis&reg; master service external traffic policy
     ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
     ##
