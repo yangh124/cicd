@@ -6,4 +6,5 @@
 #--set primary.persistence.storageClass="local-storage-mysql"
 #--set primary.persistence.storageClass="local-storage-mysql"
 #--set primary.persistence.size=1Gi
+#--set primary.persistence.existingClaim="mysql-pvc"
 helm upgrade --install redis redis --namespace db-system
