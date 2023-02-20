@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pvc
+  name: redis-pvc
   namespace: db-system
   labels:
-    app: mysql-pvc
+    app: redis-pvc
 spec:
   accessModes:
   - ReadWriteOnce #此处需要和pv对应才能匹配
   resources:
     requests:
-      storage: 2Gi
-  storageClassName: local-storage-mysql #此处需要和StorageClass.yaml匹配
+      storage: 1Gi
+  storageClassName: local-storage-redis #此处需要和StorageClass.yaml匹配

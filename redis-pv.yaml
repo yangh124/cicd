@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mysql-pv
+  name: redis-pv
   namespace: db-system
   labels:
     type: local
 spec:
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-storage-mysql
+  storageClassName: local-storage-redis
   local:
-    path: "/opt/mysql"
+    path: "/opt/redis"
   nodeAffinity:
     required:
       nodeSelectorTerms:

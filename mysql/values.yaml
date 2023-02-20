@@ -416,7 +416,7 @@ primary:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "local-storage"
+    storageClass: "local-storage-mysql"
     ## @param primary.persistence.annotations MySQL primary persistent volume claim annotations
     ##
     annotations: {}

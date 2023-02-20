@@ -1,7 +1,7 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: local-storage
+  name: local-storage-mysql
   namespace: db-system
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer

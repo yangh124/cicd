@@ -2,7 +2,7 @@
 # --set auth.rootPassword="root" 
 #--set auth.createDatabase=false
 #--set primary.persistence.existingClaim="mysql-pvc"
-#--set primary.persistence.storageClass="local-storage"
+#--set primary.persistence.storageClass="local-storage-mysql"
 #--set primary.service.type=NodePort 
 #--set primary.service.nodePorts.mysql="30306" 
 #--set primary.startupProbe.enabled=false 
