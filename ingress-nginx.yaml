@@ -8,17 +8,17 @@ spec:
   rules:
     http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: weather-push-admin
-            port:
-              number: 80
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: weather-push
-            port: 
-              number: 8080
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: weather-push-admin
+              port:
+                number: 80
+        - path: /api
+          pathType: Prefix
+          backend:
+            service:
+              name: weather-push
+              port: 
+                number: 8080
