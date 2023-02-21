@@ -1,20 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: minimal-ingress
+  name: api-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
   - http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: weather-push-admin
-            port:
-              number: 80
       - path: /api(/|$)(.*)
         pathType: Prefix
         backend:
