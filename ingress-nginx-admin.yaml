@@ -8,7 +8,7 @@ spec:
   tls:
   - hosts:
       - admin.yh124.space
-    secretName: admin-secret
+    secretName: admin-tls
   rules:
   - host: admin.yh124.space
     http:
