@@ -10,7 +10,8 @@ spec:
       - admin.yh124.space
     secretName: admin-tls
   rules:
-  - http:
+  - host: admin.yh124.space
+    http:
       paths:
       - path: /api(/|$)(.*)
         pathType: Prefix
