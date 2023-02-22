@@ -5,8 +5,13 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+  - hosts:
+      - admin.yh124.space
+    secretName: admin-secret
   rules:
-  - http:
+  - host: admin.yh124.space
+    http:
       paths:
       - path: /
         pathType: Prefix
