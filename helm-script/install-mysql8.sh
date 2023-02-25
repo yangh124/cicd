@@ -10,4 +10,4 @@
 #--set primary.livenessProbe.enabled=false 
 #--set secondary.replicaCount=0 
 #--set secondary.persistence.enable=false
-helm upgrade --install mysql8 mysql --namespace db-system
+helm upgrade --install mysql8 /root/mydata/cicd/charts/mysql --namespace db-system
