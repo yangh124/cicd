@@ -567,6 +567,9 @@ secondary:
     slow_query_log=0
     slow_query_log_file=/opt/bitnami/mysql/logs/mysqld.log
     long_query_time=10.0
+    log-bin=mysql-bin # 开启 binlog
+    binlog-format=ROW # 选择 ROW 模式
+    server_id=1 # 配置 MySQL replaction 需要定义，不要和 canal 的 slaveId 重复
 
     [client]
     port=3306
